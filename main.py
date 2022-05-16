@@ -119,7 +119,6 @@ while not done:
     #logic
     second = time.time()
     if second > first:
-        print("restart!")
         clicked = 0
         first = time.time() + timetake[level]
     #background

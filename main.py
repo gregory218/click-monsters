@@ -17,10 +17,10 @@ lightgreen = (0, 242, 65)
 RED = (255, 51, 51)
 
 #tuples
-timetake = (20, 10)
+timetake = (20, 20)
 monsters = ("fire monster", "grass monster")
 hps = (50, 70)
-monsterasset = ('assets/fire_monster.png', 'assets/???.png')
+monsterasset = ('assets/monsters/fire_monster.png', 'assets/monsters/grass_monster.png')
 textcolor = (WHITE, WHITE)
 completecolor = (lightgreen, RED)
 

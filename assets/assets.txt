@@ -1,5 +1,0 @@
-Fire monster:
-size = 1500x1500
-hp = 50
-used for tutorial
-has 20 seconds

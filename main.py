@@ -21,8 +21,8 @@ timetake = (20, 20)
 monsters = ("fire monster", "grass monster")
 hps = (50, 70)
 monsterasset = ('assets/monsters/fire_monster.png', 'assets/monsters/grass_monster.png')
-textcolor = (WHITE, WHITE)
-completecolor = (lightgreen, RED)
+textcolor = (BLACK, WHITE)
+completecolor = (lightgreen, lightgreen)
 
 #variables!
 #size
@@ -46,6 +46,7 @@ second = time.time()
 
 #fonts
 freesansbold = pygame.font.Font('freesansbold.ttf', 32)
+smallfreesansbold = pygame.font.Font('freesansbold.ttf', 32)
 
 #functions
 def colorcounter(text):
@@ -69,7 +70,7 @@ def colorcounter(text):
 #the counter text
 counter = colorcounter(clicked)
 textRect = counter.get_rect()
-textRect.center = (X // 2, Y // 2)
+textRect.center = (X // 2, 450)
 
 #the clicking image
 image = pygame.image.load(monsterasset[level])
@@ -77,7 +78,7 @@ imgRect = image.get_rect()
 imgRect.center = (X // 2, Y // 2)
 
 #discription text
-dscrpt = freesansbold.render(
+dscrpt = smallfreesansbold.render(
     f"click the {monsters[level]}. you have {round(first - second)} seconds",
     True, BLACK)
 rect2 = dscrpt.get_rect()
@@ -96,15 +97,18 @@ while not done:
         screen.fill(WHITE)
         counter = colorcounter("COMPLETE")
         textRect = counter.get_rect()
-        textRect.center = (X // 2, Y // 2)
+        textRect.center = (X // 2, 450)
         display_surface.blit(counter, textRect)
         pygame.display.flip()
         time.sleep(5)
         clicked = 0
         level += 1
+        image = pygame.image.load(monsterasset[level])
+        imgRect = image.get_rect()
+        imgRect.center = (X // 2, Y // 2)
         counter = colorcounter(clicked)
         textRect = counter.get_rect()
-        textRect.center = (X // 2, Y // 2)
+        textRect.center = (X // 2, 450)
         display_surface.blit(counter, textRect)
         pygame.display.flip()
     else:
@@ -113,7 +117,7 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        if imgRect.collidepoint(pygame.mouse.get_pos(
+        if image.collidepoint(pygame.mouse.get_pos(
         )) and event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             clicked += 1
     #logic

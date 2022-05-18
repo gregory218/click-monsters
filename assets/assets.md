@@ -1,13 +1,18 @@
-# text rectangle
+# other assets
+
+## text rectangle
 - 2000x2000
-- 
-# Fire monster
+- used to display text
+
+# monsters
+
+## Fire monster
 - size = 1500x1500
 - hp = 50
 - used for tutorial
 - has 20 seconds
-- 
-# Grass monster
+
+## Grass monster
 - size = 1800x1800
 - hp = 70
 - used in the first level

@@ -117,7 +117,7 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        if image.collidepoint(pygame.mouse.get_pos(
+        if imgRect.collidepoint(pygame.mouse.get_pos(
         )) and event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             clicked += 1
     #logic
